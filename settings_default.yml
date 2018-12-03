@@ -1,0 +1,47 @@
+---
+# How long to wait between downloads
+:sleep_for: 0.33
+# Base download directory
+:base_dir: scraped
+# Media (just images right now) download directory
+:media_dir: scraped/_media
+# Whether to scan downloaded pages for originality, to gather image download URLs, etc
+:postprocess: true
+# Whether to download images
+:download_images: true
+# Whether to filter image/media downloads by post originality:
+# filter_downloads options: 
+# :no_reblogs    => only download media if the post is not a reblog
+# :poster_is_op  => (default) only download if the blog in question made 
+#                   the original post (includes self-reblogs)
+# :original_body => only download if the blog contributed to the post 
+#                   body
+# :original_body => only download if the blog contributed to the post 
+#                   body OR tags
+:filter_downloads: :poster_is_op
+# Whether to recreate remote directory structure when downloading media
+:media_dir_structure: :recreate_remote
+# Tumblr JSON API v2 .posts() arguments. Mostly don't change these unless you already know what they mean. notes_info only grabs the most recent 50 notes.
+:blog_args: 
+  # :type: 
+  # :id: 
+  # :tag: 
+  # :limit: 
+  # :offset: 
+  # :before: 
+  :reblog_info: true
+  # :notes_info: 
+  # :filter: 
+# Tumblr JSON API v2 .tagged() arguments. Tag scraping not currently implemented. Don't change these unless you already know what they mean.
+:tag_args: 
+  # :tag: 
+  # :limit: 
+  # :filter: 
+# Tumblr JSON API v2 .dashboard() arguments. Dash scraping not currently implemented. Don't change these unless you already know what they mean.
+:dashboard_args: 
+  # :limit: 
+  # :offset: 
+  # :type: 
+  # :since_id: 
+  :reblog_info: true
+  # :notes_info: 
